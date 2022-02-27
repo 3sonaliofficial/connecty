@@ -1,9 +1,10 @@
 import { Button, Card, CardContent, Container, TextField } from "@mui/material";
 import { Formik } from "formik";
+import app_config from "../../config";
 
 const AddVendor = () => {
+  const url = app_config.api_url;
 
-    
   // 1. Form Object
   const vendorForm = {
     title: "",
@@ -15,7 +16,19 @@ const AddVendor = () => {
   const submitVendor = (values) => {
     console.log(values);
 
-    fetch()
+    const reqOpt = {
+      method: "POST",
+      body: JSON.stringify(values),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    fetch(url + "/vendor/add", reqOpt)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
 
   return (

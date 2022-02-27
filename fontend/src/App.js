@@ -14,6 +14,7 @@ function App() {
         <Routes>
           <Route element={<Main />} path="main">
             <Route element={<Home />} path="home" />
+            <Route element={<Home />} path="home" />
           </Route>
           <Route element={<Admin />} path="admin">
             <Route element={<AdminDashboard />} path="dashboard" />
@@ -21,8 +22,8 @@ function App() {
 
             <Route element={<AddVendor />} path="addvendor" />
           </Route>
+          <Route exact element={<Navigate to="/main/home" />} path="" />
         </Routes>
-        <Route exact element={<Navigate to="/main/home" />} />
       </BrowserRouter>
     </div>
   );
