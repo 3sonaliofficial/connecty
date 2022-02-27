@@ -5,10 +5,10 @@ const schema = new mongoose.Schema({
   tag: Array,
   review: Number,
   averageRating: Number,
-  topLocation:Array,
+  topLocation: Array,
   createdAt: { type: Date, default: new Date() },
 });
 
-const model = mongoose.model("users", schema);
+const model = mongoose.model("vendor", schema);
 
 module.exports = model;

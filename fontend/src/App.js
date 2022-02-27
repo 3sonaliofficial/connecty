@@ -5,6 +5,7 @@ import Home from "./components/main/home";
 import AddVendor from "./components/admin/addVendor";
 import AddReview from "./components/admin/addReview";
 import Admin from "./components/admin";
+import AdminDashboard from "./components/admin/dashboard";
 
 function App() {
   return (
@@ -15,13 +16,13 @@ function App() {
             <Route element={<Home />} path="home" />
           </Route>
           <Route element={<Admin />} path="admin">
-            <Route element ={<AdminDashboard />} path="dashboard" />
-            <Route element ={<AddReview />} path="addreview" />
-             
+            <Route element={<AdminDashboard />} path="dashboard" />
+            <Route element={<AddReview />} path="addreview" />
+
             <Route element={<AddVendor />} path="addvendor" />
           </Route>
         </Routes>
-        <Route exact element={<Navigate to="/main/home/admin//dashboard/admindashboard/review/vendor" />}
+        <Route exact element={<Navigate to="/main/home" />} />
       </BrowserRouter>
     </div>
   );

@@ -17,7 +17,7 @@ app.use(express.json());
 
 app.use("/user", userRouter);
 app.use("/vendor", vendorRouter);
-app.use("review, reviewRouter");
+app.use("/review", reviewRouter);
 
 app.listen(port, () => {
   console.log("server started");
