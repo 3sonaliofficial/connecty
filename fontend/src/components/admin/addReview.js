@@ -2,21 +2,21 @@ import { Button, Card, CardContent, Container, TextField } from "@mui/material";
 import { Formik } from "formik";
 
 const AddReview = () => {
+  const fetchData = () => {};
 
-    
   // 1. Form Object
   const reviewForm = {
     title: "",
     text: "",
     location: [],
-    speed: []
+    speed: [],
   };
 
   //   2. submit function
   const submitReview = (values) => {
     console.log(values);
 
-    fetch()
+    fetch();
   };
 
   return (

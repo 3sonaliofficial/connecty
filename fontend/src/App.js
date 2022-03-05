@@ -14,11 +14,10 @@ function App() {
         <Routes>
           <Route element={<Main />} path="main">
             <Route element={<Home />} path="home" />
-            <Route element={<Home />} path="home" />
+            <Route element={<AddReview />} path="addreview" />
           </Route>
           <Route element={<Admin />} path="admin">
             <Route element={<AdminDashboard />} path="dashboard" />
-            <Route element={<AddReview />} path="addreview" />
 
             <Route element={<AddVendor />} path="addvendor" />
           </Route>
