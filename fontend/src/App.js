@@ -6,6 +6,9 @@ import AddVendor from "./components/admin/addVendor";
 import AddReview from "./components/admin/addReview";
 import Admin from "./components/admin";
 import AdminDashboard from "./components/admin/dashboard";
+import User from "./components/user";
+import Dashboard from "./components/user/dashboard";
+import AddQuery from "./components/user/addQuery";
 
 function App() {
   return (
@@ -15,6 +18,12 @@ function App() {
           <Route element={<Main />} path="main">
             <Route element={<Home />} path="home" />
             <Route element={<AddReview />} path="addreview" />
+          </Route>
+          <Route element={<User />} path="user">
+            <Route element={<AddReview />} path="addreview" />
+            <Route element={<Dashboard />} path="dashboard">
+              <Route element={<AddQuery />} path="query" />
+            </Route>
           </Route>
           <Route element={<Admin />} path="admin">
             <Route element={<AdminDashboard />} path="dashboard" />
