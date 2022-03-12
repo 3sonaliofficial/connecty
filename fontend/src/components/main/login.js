@@ -1,15 +1,14 @@
 import { Formik } from "formik";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
-import app_config from "../config";
-import { ProductContext } from "../productContext";
-import "./login.css";
+import app_config from "../../config";
+/*import "./login.css";*/
 
 const Login = () => {
   const url = app_config.api_url;
 
-  const { setLoggedin } = useContext(ProductContext);
+  const [loggedin, setLoggedin] = useState(false);
 
   const loginForm = {
     email: "",

@@ -1,0 +1,26 @@
+.my-input {
+    border: none;
+    border-bottom: 2px solid rgba(75, 66, 66, 0.644);
+    outline: none;
+  }
+  
+  .img-back {
+    background: url(https://www.markup.io/wp-content/uploads/2021/04/markup_ui_change-1600x1167.png);
+    background-size: cover;
+    height: 85%;                  
+    background-position: center;
+  }
+  
+  .my-card-body {
+    padding: 50px 100px;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .img-back {
+      height: 200px;
+    }
+  
+    .my-card-body {
+      padding: 50px 20px;
+    }
+  }
