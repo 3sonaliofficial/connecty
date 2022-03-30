@@ -28,6 +28,7 @@ function App() {
             <Route element={<Home />} path="home" />
             <Route element={<Signup />} path="signup" />
             <Route element={<Login />} path="login" />
+            {/* list reviews */}
           </Route>
           <Route element={<User />} path="user">
             <Route element={<AddReview />} path="addreview" />

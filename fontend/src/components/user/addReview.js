@@ -1,13 +1,25 @@
-import { Button, Card, CardContent, Container, TextField } from "@mui/material";
+import {
+  Autocomplete,
+  Button,
+  Card,
+  CardContent,
+  Chip,
+  Container,
+  TextField,
+} from "@mui/material";
 import { Formik } from "formik";
+import app_config from "../../config";
 
 const AddReview = () => {
+  const url = app_config.api_url;
+
   const fetchData = () => {};
 
   // 1. Form Object
   const reviewForm = {
     title: "",
-    text: "",
+    description: "",
+    vendor: "",
     location: [],
     speed: [],
   };
@@ -16,7 +28,15 @@ const AddReview = () => {
   const submitReview = (values) => {
     console.log(values);
 
-    fetch();
+    fetch(url + "/review/add", {
+      method: "POST",
+      body: JSON.stringify(values),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
 
   return (
@@ -44,14 +64,6 @@ const AddReview = () => {
                     onChange={handleChange}
                     value={values.description}
                     label="Description"
-                    className="w-100 mt-3"
-                  />
-
-                  <TextField
-                    id="tag"
-                    onChange={handleChange}
-                    value={values.tag}
-                    label="Tag"
                     className="w-100 mt-3"
                   />
 
