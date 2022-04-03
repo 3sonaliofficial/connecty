@@ -16,29 +16,11 @@ const AddQuery = () => {
   <h1>Text Area</h1>
 
   </div>
-  
-  
-  </div>
 </div>
-<header>
-<div className="container">
-<div class="row"></div>
 
-
-       
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-  <button class="btn btn-primary me-md-6" type="button"> button</button>
-  
 </div>
-        </div>
-        
-        
-</header>
 
-        
-      
-    </div>
-  );
-};
 
+</div>
+  )};
 export default AddQuery;
