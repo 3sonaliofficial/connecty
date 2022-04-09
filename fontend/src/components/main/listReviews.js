@@ -1,85 +1,48 @@
 import React from "react";
 
 const ListReviews = () => {
-  return (
-    <>
-      <div class="card text-center">
-        <div class="card-header">
-          <ul class="nav nav-tabs card-header-tabs">
-            <li class="nav-item">
-              <a class="nav-link " aria-current="true" href="#">
-                Active
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                Link
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li>
-          </ul>
-        </div>
-        <div class="card-body">
-          <div className="container mt-5">
-            <div className="row">
-              <div className="col">
-                <div className="card-body">
-                  <div className="row">
-                    <div className="col-6">
-                      <div class="card w-75">
-                        <div class="card-body">
-                          <div className="">
-                            <h5 class="card-title float-start">Card title</h5>
-                            <br />
-                          </div>
-                          <div className="mt-4 float-start">
-                            <h5 class="card-title  ">Description</h5>
-                          </div>
-
-                          <div className="float-start">
-                            <a href="#" class="btn btn-primary">
-                              Button
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-6">
-                      <div class="card w-75">
-                        <div class="card-body">
-                          <div className="float-start float-center">
-                            <a href="#" className="btn btn-primary ">
-                              User
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+  const reviewCard = () => {
+    return (
+      <div className="card">
+        <div className="row">
+          <div className="col-md-9">
+            <div className="card-body">
+              <h3>Title</h3>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+              </p>
+              <button className="btn btn-primary">Comment</button>
             </div>
-
-            <div>
-              <div class="card w-75">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    With supporting text below as a natural lead-in to
-                    additional content.
-                  </p>
-                  <a href="#" class="btn btn-primary">
-                    Button
-                  </a>
-                </div>
+          </div>
+          <div className="col-md-3">
+            <div className="card">
+              <div className="card-body">
+                <img
+                  className="img-fluid"
+                  src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
+                />
+                <p className="text-center">User Name</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div>ListReviews</div>;
+    );
+  };
+
+  return (
+    <>
+      <header className="bg-dark" style={{ height: "10rem" }}></header>
+      <div className="row">
+        <div className="col-md-3 bg-primary">
+          <h3>Sidebar here</h3>
+        </div>
+        <div className="col-md-9">
+          <div className="col-md-10 mx-auto">{reviewCard()}</div>
+        </div>
+      </div>
     </>
   );
 };
