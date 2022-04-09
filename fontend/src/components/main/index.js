@@ -7,9 +7,8 @@ const Main = () => {
     <>
       <Header />
       <Outlet />
-      <Footer />
     </>
   );
-}; 
+};
 
 export default Main;

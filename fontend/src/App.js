@@ -14,10 +14,11 @@ import Admin from "./components/admin";
 import AdminDashboard from "./components/admin/dashboard";
 import User from "./components/user";
 import Dashboard from "./components/user/dashboard";
-import AddQuery from "./components/user/addQuery";
+ import AddQuery from "./components/user/addQuery";
 import Login from "./components/main/login";
 import Signup from "./components/main/signup";
 import AddReview from "./components/user/addReview";
+import ListReviews from "./components/main/listReviews";
 
 function App() {
   return (
@@ -27,13 +28,16 @@ function App() {
           <Route element={<Main />} path="main">
             <Route element={<Home />} path="home" />
             <Route element={<Signup />} path="signup" />
+          
             <Route element={<Login />} path="login" />
-            {/* list reviews */}
+            <Route element={<ListReviews />} path="listreviews" />
+      
+          
           </Route>
           <Route element={<User />} path="user">
             <Route element={<AddReview />} path="addreview" />
             <Route element={<Dashboard />} path="dashboard" />
-            <Route element={<AddQuery />} path="query" />
+            {<Route element={<AddQuery />} path="query" /> }
           </Route>
           <Route element={<Admin />} path="admin">
             <Route element={<AdminDashboard />} path="dashboard" />
