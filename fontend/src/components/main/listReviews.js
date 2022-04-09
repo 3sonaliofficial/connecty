@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ListReviews = () => {
-  return <div>ListReviews</div>;
+  const [reviews, setReviews] = useState([]);
+  const [query, setQuery] = useState([]);
+
+  const [loading, setLoading] = useState(false);
+
+  return <div></div>;
 };
 
 export default ListReviews;
