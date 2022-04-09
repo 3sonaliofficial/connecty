@@ -8,19 +8,15 @@ const AddQuery = () => {
           src="https://wallpaperaccess.com/full/3533193.png"
           className="card-img-top"
         />
-     
 
-  <div class="card-body">
-  <h2>Add new query</h2>
-  <div className="card"  >
-  <h1>Text Area</h1>
-
-  </div>
-</div>
-
-</div>
-
-
-</div>
-  )};
+        <div class="card-body">
+          <h2>Add new query</h2>
+          <div className="card">
+            <h1>Text Area</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 export default AddQuery;

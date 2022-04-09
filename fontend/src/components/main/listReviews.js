@@ -1,6 +1,31 @@
+import { Card, CardContent } from "@mui/material";
 import React, { useState } from "react";
+import app_config from "../../config";
 
 const ListReviews = () => {
+  const [reviews, setReviews] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const url = app_config.api_url;
+
+  const fetchReviews = () => {
+    fetch(url + "/review/getall")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+
+  const displayReviews = () => {
+    if (!loading) {
+      return reviews.map(({ title, description, vendor, location, speed }) => (
+        <Card>
+          <CardContent></CardContent>
+        </Card>
+      ));
+    }
+  };
+
   const reviewCard = () => {
     return (
       <div className="card">
