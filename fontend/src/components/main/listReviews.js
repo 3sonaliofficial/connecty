@@ -39,7 +39,7 @@ const ListReviews = () => {
                     className="img-fluid"
                     src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
                   />
-                  <p className="text-center">User Name</p>
+                  <p className="text-center">{user.username}</p>
                 </div>
               </div>
             </div>

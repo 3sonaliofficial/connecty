@@ -11,11 +11,12 @@ router.post("/add", (req, res) => {
     .catch((err) => {
       console.error(err);
       res.status(500).json(err);
-    }); 
+    });
 });
 
 router.get("/getall", (req, res) => {
   Model.find({})
+    .populate("user")
     .then((data) => {
       console.log("user data saved!!");
       res.status(200).json(data);

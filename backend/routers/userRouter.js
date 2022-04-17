@@ -16,6 +16,7 @@ router.post("/add", (req, res) => {
 
 router.get("/getall", (req, res) => {
   Model.find({})
+    .populate("user")
     .then((data) => {
       console.log("user data saved!!");
       res.status(200).json(data);
