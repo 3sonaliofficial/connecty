@@ -8,10 +8,15 @@ import {
   TextField,
 } from "@mui/material";
 import { Formik } from "formik";
+import { useState } from "react";
 import app_config from "../../config";
 
 const AddReview = () => {
   const url = app_config.api_url;
+
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(sessionStorage.getItem("user"))
+  );
 
   const fetchData = () => {};
 
@@ -19,7 +24,7 @@ const AddReview = () => {
   const reviewForm = {
     title: "",
     description: "",
-    vendor: "",
+    user: currentUser._id,
     location: [],
     speed: [],
   };
@@ -60,6 +65,8 @@ const AddReview = () => {
                   />
 
                   <TextField
+                    multiline
+                    rows={4}
                     id="description"
                     onChange={handleChange}
                     value={values.description}

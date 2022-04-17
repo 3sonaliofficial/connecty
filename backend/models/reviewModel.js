@@ -2,7 +2,7 @@ const mongoose = require("../connection");
 const schema = new mongoose.Schema({
   title: String,
   description: String,
-  vendor: { type: mongoose, type: Object, ref: "users" },
+  user: { type: mongoose.Types.ObjectId, ref: "users" },
   location: Object,
   speed: Object,
 });

@@ -22,6 +22,8 @@ const AddQuery = () => {
     description: "",
     vendor: "",
     location: [],
+    speed : [],
+    
   };
 
   //   2. submit function

@@ -3,7 +3,7 @@ const schema = new mongoose.Schema({
   title: String,
   description: String,
   user: { type: mongoose, type: Object, ref: "users" },
-  location: Object,
+  location: Array,
 });
 
 const model = mongoose.model("queries", schema);

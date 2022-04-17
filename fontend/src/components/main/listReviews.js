@@ -1,35 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import app_config from "../../config";
 
 const ListReviews = () => {
-  const reviewCard = () => {
-    return (
-      <div className="card">
-        <div className="row">
-          <div className="col-md-9">
-            <div className="card-body">
-              <h3>Title</h3>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-              </p>
-              <button className="btn btn-primary">Comment</button>
-            </div>
-          </div>
-          <div className="col-md-3">
-            <div className="card">
+  const url = app_config.api_url;
+  const [reviewList, setReviewList] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const fetchData = () => {
+    fetch(url + "/review/getall")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setReviewList(data);
+        setLoading(false);
+      });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const displayData = () => {
+    return reviewList.map(({ title, description, user, location, speed }) => {
+      return (
+        <div className="card">
+          <div className="row">
+            <div className="col-md-9">
               <div className="card-body">
-                <img
-                  className="img-fluid"
-                  src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
-                />
-                <p className="text-center">User Name</p>
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <button className="btn btn-primary">Comment</button>
+              </div>
+            </div>
+            <div className="col-md-3">
+              <div className="card">
+                <div className="card-body">
+                  <img
+                    className="img-fluid"
+                    src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
+                  />
+                  <p className="text-center">User Name</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    });
   };
 
   return (
@@ -40,7 +57,7 @@ const ListReviews = () => {
           <h3>Sidebar here</h3>
         </div>
         <div className="col-md-9">
-          <div className="col-md-10 mx-auto">{reviewCard()}</div>
+          <div className="col-md-10 mx-auto">{displayData()}</div>
         </div>
       </div>
     </>
