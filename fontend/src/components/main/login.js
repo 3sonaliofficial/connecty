@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
 import app_config from "../../config";
-/*import "./login.css";*/
+import "./login.css";
 
 const Login = () => {
   const url = app_config.api_url;
@@ -12,6 +12,7 @@ const Login = () => {
 
   const loginForm = {
     email: "",
+
     password: "",
   };
 
