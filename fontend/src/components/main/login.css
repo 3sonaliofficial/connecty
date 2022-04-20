@@ -1,0 +1,96 @@
+* {
+    font-family: Nunito;
+  }
+  
+  .login-container {
+    /* background: linear-gradient(to right bottom, green, yellow); */
+    /* background: url(https://www.teahub.io/photos/full/288-2882860_music-background-minimalist.jpg) no-repeat; */
+    background: linear-gradient(to bottom, rgba(0, 128, 0, 0.301), rgb(0, 0, 0)),
+      url(https://www.teahub.io/photos/full/288-2882860_music-background-minimalist.jpg);
+    height: 100vh;
+    background-size: cover;
+    padding-top: 10%;
+  }
+  
+  .my-card {
+    background-color: rgb(49, 49, 49);
+    width: 100%;
+    border-radius: 5px;
+    margin: auto;
+    padding: 10%;
+    box-sizing: border-box;
+    box-shadow: 3px 3px 15px 3px rgba(0, 0, 0, 0.459);
+  }
+  
+  
+  
+  .my-input,
+  .my-btn {
+    display: block;
+    margin-top: 20px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.459);
+    /* box-shadow : x-offset y-offset blur size color */
+  }
+  
+  .my-input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .my-input:active {
+    background-color: yellow;
+  }
+  
+  .my-input:focus {
+    background-color: rgb(185, 255, 255);
+    outline: 2px solid rgb(38, 167, 87);
+  }
+  
+  .my-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(38, 167, 87);
+    color: white;
+    transition: 300ms;
+  }
+  
+  .my-btn:hover {
+    transform: translateY(-10px);
+  }
+  
+  .form-logo {
+    display: block;
+    margin: auto;
+    width: 50%;
+  }
+  
+  .subheader {
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+    font-size: 0.8em;
+  }
+  
+  .subheader span {
+    margin: 10px;
+  }
+  
+  #active {
+    text-decoration: underline green;
+  }
+  
+  .remember {
+    margin: 10px 5px;
+    color: white;
+  }
+  
+  .link {
+    display: block;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    margin: 30px 0;
+  }
