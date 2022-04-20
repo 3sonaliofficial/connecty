@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import app_config from "../../config";
 
-const ListReviews = () => {
+const viewReviews = () => {
   const url = app_config.api_url;
-  const [reviewList, setReviewList] = useState([]);
+  const [viewList, setReviewList] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const fetchData = () => {
@@ -64,4 +64,4 @@ const ListReviews = () => {
   );
 };
 
-export default ListReviews;
+export default ViewReviews;
