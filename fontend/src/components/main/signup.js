@@ -1,4 +1,4 @@
-/*import "./signup.css";*/
+import "./signup.css";
 import { Button, TextField } from "@mui/material";
 import { Formik } from "formik";
 import app_config from "../../config";

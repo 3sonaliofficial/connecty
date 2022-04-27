@@ -29,6 +29,13 @@ const Header = ({}) => {
                 >
                   Login
                 </NavLink>
+                <NavLink
+                  className="nav-link"
+                  aria-current="page"
+                  to="/main/login"
+                >
+                  Login
+                </NavLink>
               </li>
               <li class="nav-item">
                 <NavLink className="nav-link" to="/main/link">
