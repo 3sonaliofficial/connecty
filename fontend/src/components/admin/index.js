@@ -6,9 +6,9 @@ import Dashboard from "./dashboard";
 const Admin = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

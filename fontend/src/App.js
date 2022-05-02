@@ -19,11 +19,14 @@ import Login from "./components/main/login";
 import Signup from "./components/main/signup";
 import AddReview from "./components/user/addReview";
 import ListReviews from "./components/main/listReviews";
+import Header from "./header";
+import Authenticator from "./authenticator";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route element={<Main />} path="main">
             <Route element={<Home />} path="home" />
@@ -32,7 +35,14 @@ function App() {
             <Route element={<ListReviews />} path="listreviews" />
           </Route>
 
-          <Route element={<User />} path="user">
+          <Route
+            element={
+              <Authenticator>
+                <User />
+              </Authenticator>
+            }
+            path="user"
+          >
             <Route element={<AddReview />} path="addreview" />
             <Route element={<Dashboard />} path="dashboard" />
             {<Route element={<AddQuery />} path="query" />}

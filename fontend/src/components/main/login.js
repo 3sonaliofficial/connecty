@@ -1,6 +1,7 @@
 import { Formik } from "formik";
 import { useContext, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import app_config from "../../config";
 import "./login.css";
@@ -9,10 +10,10 @@ const Login = () => {
   const url = app_config.api_url;
 
   const [loggedin, setLoggedin] = useState(false);
+  const navigate = useNavigate();
 
   const loginForm = {
     email: "",
-
     password: "",
   };
 
@@ -28,11 +29,12 @@ const Login = () => {
     };
 
     fetch(url + "/user/backendlogin", reqOpt).then((res) => {
-      if (res.status == 200) {
+      if (res.status === 200) {
         console.log("login success");
         res.json().then((data) => {
           sessionStorage.setItem("user", JSON.stringify(data));
           setLoggedin(true);
+          navigate("/user/addreview");
         });
         // toast.success("Loggedin Successfully");
         Swal.fire({
@@ -40,7 +42,7 @@ const Login = () => {
           title: "Success",
           text: "login success",
         });
-      } else if (res.status == 300) {
+      } else if (res.status === 300) {
         console.log("login failed");
         // toast.error("Loggin Failed");
         Swal.fire({

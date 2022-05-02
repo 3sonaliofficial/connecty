@@ -1,6 +1,8 @@
 /*import "./signup.css";*/
 import { Button, TextField } from "@mui/material";
 import { Formik } from "formik";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import app_config from "../../config";
 
 const SignUp = () => {
@@ -9,6 +11,8 @@ const SignUp = () => {
     email: "",
     password: "",
   };
+
+  const navigate = useNavigate();
 
   const url = app_config.api_url;
 
@@ -24,7 +28,16 @@ const SignUp = () => {
     };
 
     fetch(url + "/user/add", reqOpt)
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.status === 200)
+          Swal.fire({
+            icon: "success",
+            title: "Success",
+            text: "Successfully Registered!",
+          });
+        navigate("/main/login");
+        return res.json();
+      })
       .then((data) => {
         console.log(data);
       });
